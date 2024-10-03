@@ -1,0 +1,61 @@
+// server.js
+const express = require('express');
+const dotenv = require('dotenv');
+
+// Initialize dotenv to read environment variables from .env
+dotenv.config();
+
+// Initialize the Express application
+const app = express();
+
+// Set the port from .env or use 9000 as default
+const PORT = process.env.PORT || 9000;
+
+// Middleware to parse incoming JSON requests
+app.use(express.json());
+
+// Local array object containing students data
+let students = [
+    { id: 1, name: "Karo", course: "Computer Technology", faculty: "Science" },
+    { id: 2, name: "Ibukun", course: "Computer Science", faculty: "Science" },
+    { id: 3, name: "Daniel", course: "Business Admin", faculty: "Commerce" }
+];
+
+// GET operation to fetch all student data
+app.get('/api/v1/student', (req, res) => {
+    res.status(200).json({
+        status: "success",
+        data: students
+    });
+});
+
+// POST operation to create a new student
+app.post('/api/v1/create-students', (req, res) => {
+    const { id, name, course, faculty } = req.body;
+
+    // Validation to ensure all fields are provided
+    if (!id || !name || !course || !faculty) {
+        return res.status(400).json({
+            status: "fail",
+            message: "Please provide complete student details"
+        });
+    }
+
+    // Create a new student object
+    const newStudent = { id, name, course, faculty };
+    
+    // Add the new student to the students array
+    students.push(newStudent);
+
+    // Return a success response
+    res.status(201).json({
+        status: "success",
+        message: "Student created successfully",
+        data: newStudent
+    });
+});
+
+// Start the server and listen on the specified port
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

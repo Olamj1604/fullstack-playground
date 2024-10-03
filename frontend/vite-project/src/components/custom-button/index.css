@@ -1,0 +1,50 @@
+.heading-primary {
+    color: white;
+    text-align: right;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-left: 3rem;
+}
+
+.parallelogram-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: skyblue;
+    padding: 20px;
+    transform: skew(-20deg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(228, 80, 80, 0.3);
+    overflow: hidden;
+}
+
+.form-container {
+    transform: skew(20deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.submit-btn {
+    background-color: rgba(10, 10, 238);
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.submit-btn:hover {
+    background-color: #ff5722;
+}

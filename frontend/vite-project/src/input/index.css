@@ -1,0 +1,24 @@
+.movie-input {
+    margin-bottom: 15px;
+}
+
+.movie-input label {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.movie-input input {
+    padding: 10px;
+    width: 80%;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.movie-input input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
